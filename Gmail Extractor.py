@@ -1,10 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ![gmaillogonew.png](attachment:gmaillogonew.png)
-
-# # <div style="text-align: center">Extract Emails from Gmail and convert to Excel</div>
-
 # This code -
 # 1. Extracts emails from Gmail from 'Inbox' and 'Spam' folders in .txt format.<br> 
 # 2. Then converts each folder to Excel files.<br>
@@ -14,11 +10,6 @@
 # **Important Note : enable 'Less Secure App' access for the code to work**<br>
 # https://myaccount.google.com/lesssecureapps
 
-# **Import Libraries**<br>
-# (install the required packages)
-
-# In[8]:
-
 
 import os, re
 import pandas as pd
@@ -27,12 +18,6 @@ from getpass import getpass
 import imaplib, email
 from bs4 import BeautifulSoup
 from nltk import word_tokenize
-
-
-# **Class emails to download emails**
-
-# In[12]:
-
 
 class emails:
    
@@ -151,33 +136,15 @@ class emails:
                 email_list.append(email)
         return email_list
 
-
-# **Input Email ID and Password**
-
-# In[10]:
-
-
 #main
 if __name__=='__main__':
     email_id = getpass('Enter Gmail ID :')
     email_password = getpass('Enter Password :')
     mail=emails(email_id,email_password)
 
-
-# **Download Spam and Inbox mails from Gmail**
-
-# In[13]:
-
-
 #This might take a while
 emails.download_emails('[Gmail]/Spam')
 emails.download_emails('INBOX')
-
-
-# **Convert spam emails folder to Excel file**
-
-# In[43]:
-
 
 cdir = os.getcwd()
 spam_list = emails.create_email_list(cdir + '\Downloads\\' + emails.directory('[Gmail]/Spam'))
@@ -187,12 +154,6 @@ spam_df.to_excel(cdir + '\Downloads\spam.xlsx')
 print('Converted spam emails to Excel file.')
 print('------------------------------')
 
-
-# **Convert non spam emails folder to Excel file**
-
-# In[44]:
-
-
 non_spam_list = emails.create_email_list(cdir + '\Downloads\\' + emails.directory('INBOX'))
 non_spam_df = pd.DataFrame(non_spam_list)
 non_spam_df.to_excel(cdir + '\Downloads\inbox.xlsx')
@@ -200,53 +161,22 @@ non_spam_df.to_excel(cdir + '\Downloads\inbox.xlsx')
 print('Converted inbox emails to Excel file.')
 print('------------------------------')
 
-
-# In[45]:
-
-
-#read both files
 df1 = pd.read_excel(cdir + '\Downloads\inbox.xlsx')
 df2 = pd.read_excel(cdir + '\Downloads\spam.xlsx')
 
-
-# In[46]:
-
-
 df1.columns
 
-
-# In[47]:
-
-
 df2.columns
-
-
-# **Add 'non_spam' Label and 0 Label_Number to non spam file**
-
-# In[48]:
-
 
 df1.insert(1,"Label", "non_spam")
 df1.insert(3,"Label_Number", 0)
 df1.rename(columns = {'Unnamed: 0': 'ID',0: 'Text'}, inplace = True)
 df1.head()
 
-
-# **Add 'spam' Label and 1 Label_Number to spam file**
-
-# In[49]:
-
-
 df2.insert(1,"Label", "spam")
 df2.insert(3,"Label_Number", 1)
 df2.rename(columns = {'Unnamed: 0': 'ID',0: 'Text'}, inplace = True)
 df2.head()
-
-
-# **Merge spam and non spam Excel files in one and shuffle**
-
-# In[68]:
-
 
 df_all = pd.concat([df1, df2])
 df_all.reset_index(inplace=True, drop=True) 
@@ -254,12 +184,6 @@ df_all.pop('ID')
 df_final = df_all.sample(frac = 1)
 df_final.reset_index(inplace=True, drop=True) 
 df_final
-
-
-# **Enter the name of Excel file and Download final Edataset**
-
-# In[70]:
-
 
 excel_file_name = input("Enter name of Excel File: ")
 df_final.to_excel(cdir + '\Downloads\\'+excel_file_name + '.xlsx')
