@@ -31,7 +31,7 @@ https://myaccount.google.com/lesssecureapps <br><br>
 - Random Forest Classifier
 - Multinomial Naïve Bayes <br>
 
-### <img width="30px" src="https://user-images.githubusercontent.com/55101825/127714983-bebad7f7-f81c-4072-8033-0c4cf5773de2.png">  &nbsp; Python Libraries <br>
+### <img width="30px" src="https://user-images.githubusercontent.com/55101825/127714983-bebad7f7-f81c-4072-8033-0c4cf5773de2.png">  &nbsp; Python Libraries <br><br>
 
 ![NumPy](https://img.shields.io/badge/-NumPy-05122A?style=flat&logo=NumPy)&nbsp;
 ![Pandas](https://img.shields.io/badge/-Pandas-05122A?style=flat&logo=Pandas)&nbsp;
