@@ -28,7 +28,7 @@ https://myaccount.google.com/lesssecureapps <br><br>
 - Support Vector Machine (RBF)
 - K Nearest Neighbor
 - Decision Tree Classifier
-- Randon Forest Classifier
+- Random Forest Classifier
 - Multinomial Naïve Bayes <br>
 
 ### <img width="30px" src="https://user-images.githubusercontent.com/55101825/127714983-bebad7f7-f81c-4072-8033-0c4cf5773de2.png">  &nbsp; Python Libraries <br>
