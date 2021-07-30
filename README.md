@@ -2,7 +2,7 @@
 
 <h1 id="top" align="center">Gmail Extraction and Classification </h1>
 
-## Gmail Extractor
+## :e-mail:	Gmail Extractor
  
 Extracts emails from Gmail from 'Inbox' and 'Spam' folders in .txt format. Then converts each folder to Excel files. Adds 'spam' and 'non-spam' Labels and 1/0 Label_Numbers. Merges both Excel files into one and shuffles them.<br>
 
@@ -14,14 +14,14 @@ Extracts emails from Gmail from 'Inbox' and 'Spam' folders in .txt format. Then 
 <br> **NOTE**: enable 'Less Secure App' access for the code to work
 https://myaccount.google.com/lesssecureapps <br><br>
 
-## Gmail Classification 
+## :mailbox_with_mail:	Gmail Classification 
 
 
 ### Main steps to build a classifier - <br><br>
 <p align="center"> <img src="https://user-images.githubusercontent.com/55101825/127713129-39ce742d-44c3-4a22-be39-0ab9e4c76fed.png"></p>
 
 
-### Machine Learning Models Used -
+### 🛠️ Machine Learning Models Used -
 
 - Logistic Regression
 - Support Vector Machine (Linear)
